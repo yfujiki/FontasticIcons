@@ -23,8 +23,8 @@
 
 - (UIImage *)imageWithBounds:(CGRect)bounds color:(UIColor *)color shadowOffset:(CGSize)shadowOffset shadowColor:(UIColor *)shadowColor {
     FIIconRendererRef renderer = self.renderer;
-    renderer.bounds = CGRectMake(0, 0, bounds.size.width, bounds.size.height);
-    renderer.iconInset = bounds.origin;
+    renderer.bounds = CGRectMake(0, 0, bounds.size.width + fabsf(shadowOffset.width), bounds.size.height + fabsf(shadowOffset.height));
+    renderer.iconInset = CGPointMake(bounds.origin.x + shadowOffset.width, bounds.origin.y - shadowOffset.height);
     renderer.iconColor = color;
     renderer.iconShadowColor = shadowColor;
     renderer.iconShadowOffset = shadowOffset;
