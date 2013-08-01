@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
   s.source       = { :git => 'https://github.com/yfujiki/FontasticIcons.git', :tag => "#{s.version}" }
   s.platform     = :ios, '4.2'
   s.source_files = 'FontasticIcons/Sources/Classes'
-  s.resources    = 'FontasticIcons/Sources/Resources/**'
+  s.resources    = ['FontasticIcons/Sources/Resources/Strings/*','FontasticIcons/Sources/Resources/Fonts/*']
   s.frameworks   = 'CoreText', 'QuartzCore'
   s.requires_arc = true
 end
